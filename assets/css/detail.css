@@ -175,3 +175,41 @@ body{
     min-width:200px;
     text-align:center;
 }
+
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+iframe.goog-te-menu-frame,
+.skiptranslate iframe {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 2. MATIKAN SEMUA HIGHLIGHT (KOTAK PUTIH) PAS DIKLIK */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative !important;
+    display: inline !important;
+}
+
+[class*="goog-text-highlight"], 
+[class*="VIpgJd-y6oGMc-ti6h9c"],
+.goog-text-highlight,
+.skiptranslate font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+
+/* Sembunyikan Tooltip Popup */
+.goog-tooltip, .goog-tooltip:hover {
+    display: none !important;
+}
+
+/* Pastikan widget asli tersembunyi */
+#google_translate_element {
+    display: none !important;
+}
