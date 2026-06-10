@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dashboard KGT</title>
+
+<link rel="stylesheet" href="../assets/css/admin.css">
+
+<link rel="icon"
+type="image/png"
+href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
+
+</head>
+<body>
+
+<div class="admin-wrapper">
+
+    <div class="admin-container">
+
+        <h2>Dashboard KGT</h2>
+
+        <!-- Statistik -->
+        <div class="stats-container">
+
+            <div class="stat-card">
+                <h3>Total Produk</h3>
+                <p id="productCount">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>Total Kategori</h3>
+                <p id="categoryCount">0</p>
+            </div>
+
+        </div>
+
+        <!-- Tombol Tambah -->
+        <div class="action-bar">
+
+            <button
+                class="btn-add"
+                id="addProductBtn">
+                + Add New Product
+            </button>
+
+        </div>
+
+        <!-- List Produk -->
+        <div id="productsContainer">
+
+            <div class="empty-state">
+
+                <h3>Belum Ada Produk</h3>
+
+                <p>
+                    Produk yang ditambahkan akan muncul di sini.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- Logout -->
+        <button
+            class="btn-logout"
+            onclick="logout()">
+            Logout
+        </button>
+
+    </div>
+
+</div>
+
+<!-- =======================
+     MODAL TAMBAH PRODUK
+======================= -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3 id="modalTitle">
+            Tambah Produk
+        </h3>
+
+        <input
+            type="text"
+            id="newName"
+            placeholder="Nama Produk">
+
+        <select id="newCategory">
+
+            <option value="">
+                Pilih Kategori
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            id="newBrand"
+            placeholder="Brand">
+
+        <textarea
+            id="newDescription"
+            placeholder="Deskripsi"></textarea>
+
+        <input
+            type="number"
+            id="newStock"
+            placeholder="Stock">
+
+        <!-- Upload gambar -->
+        <input
+            type="file"
+            id="newImage"
+            accept="image/*">
+
+        <div class="modal-actions">
+
+            <button
+                class="edit-btn"
+                onclick="saveProduct()">
+                Simpan
+            </button>
+
+            <button
+                class="delete-btn"
+                onclick="closeModal()">
+                Batal
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+
+</body>
+</html>

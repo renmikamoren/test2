@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PT. Khalf Global Teknik | Supplier Alat Teknik</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://translate.googleapis.com">
+<body>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <span class="red">KHALF</span> <span class="blue">GLOBAL TEKNIK</span>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+    <li><a href="index.html">Beranda</a></li>
+    <li><a href="#tentang">Tentang</a></li>
+    <li><a href="catalog.html">Katalog</a></li>
+    <li><a href="contact.html">Kontak</a></li>
+    <li class="lang-switcher">
+        <a href="javascript:void(0)" onclick="changeLanguage('id')">ID</a> | 
+        <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a>
+    </li>
+</ul>
+
+<div id="google_translate_element" style="display:none;"></div>
+
+<script type="text/javascript">
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'id',
+            includedLanguages: 'en,id',
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+    function changeLanguage(lang) {
+        var selectField = document.querySelector(".goog-te-combo");
+        if (selectField) {
+            selectField.value = lang;
+            selectField.dispatchEvent(new Event('change'));
+        }
+    }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-overlay">
+            <div class="container" data-aos="fade-down">
+                <h2>Solusi Alat Teknik & Industri</h2>
+                <p>Mendukung kemajuan industri Indonesia sejak 2016 dengan produk berkualitas tinggi.</p>
+                <a href="catalog.html" class="btn-primary">Lihat Produk Kami</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="tentang" class="section">
+        <div class="container">
+            <h3 class="section-title" data-aos="fade-right">Tentang Kami</h3>
+            <div class="about-content" data-aos="fade-up">
+                <p>PT. Khalf Global Teknik didirikan oleh Zulham Effendi, S.T. sebagai mitra terpercaya dalam pengadaan alat teknik, mesin industri, hingga solusi special tools untuk berbagai sektor manufaktur dan pemerintahan.</p>
+                <p style="margin-top: 15px;">Berdiri sejak 2016, kami berkomitmen memberikan kontribusi nyata bagi kemajuan industri di Indonesia dengan mengutamakan kualitas produk dan kecepatan layanan secara profesional.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="katalog" class="bg-light section">
+    <div class="container">
+        <h3 class="section-title" data-aos="fade-right">
+            Katalog Unggulan
+        </h3>
+
+        <div id="product-grid" class="grid"></div>
+    </div>
+</section>
+
+    <footer id="kontak">
+        <div class="container">
+            <p><strong>PT. Khalf Global Teknik</strong></p>
+            <p>Jl. Raya Mukhtar Tabrani, Bintang Metropol Blok A4/97, Bekasi Utara</p>
+            <p>Hubungi Kami: 021-89250513</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 PT. Khalf Global Teknik</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 1000, 
+        once: true,
+        offset: 100,
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

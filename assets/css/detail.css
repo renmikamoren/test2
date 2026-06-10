@@ -1,0 +1,177 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial,sans-serif;
+    background:#f5f7fa;
+    color:#222;
+}
+
+.detail-container{
+    max-width:1200px;
+    margin:50px auto;
+    padding:20px;
+}
+
+.product-detail{
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    display:grid;
+    grid-template-columns:450px 1fr;
+    gap:50px;
+
+    padding:40px;
+}
+
+.product-image{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.product-image img{
+    width:100%;
+    max-width:400px;
+    border-radius:12px;
+    object-fit:contain;
+}
+
+.category-badge{
+    display:inline-block;
+    background:#e8f0ff;
+    color:#1d4ed8;
+    padding:6px 14px;
+    border-radius:20px;
+    font-size:14px;
+    margin-bottom:15px;
+}
+
+.product-info h1{
+    font-size:40px;
+    margin-bottom:10px;
+    margin-left: -10px;
+}
+
+.brand{
+    color:#666;
+    font-size:18px;
+    margin-bottom:25px;
+}
+
+.description{
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.specs-box{
+    background:#f8fafc;
+    border-radius:10px;
+    padding:20px;
+    margin-top:20px;
+}
+
+.specs-box h3{
+    margin-bottom:15px;
+}
+
+.spec-item{
+    padding:8px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.spec-item:last-child{
+    border-bottom:none;
+}
+
+.action-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:8px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#e11d48;
+    color:white;
+}
+
+.btn-primary:hover{
+    background: #be123c; 
+    
+}
+
+.btn-secondary{
+    background:#e5e7eb;
+    color:#111;
+}
+
+.btn-secondary:hover{
+    background:#d1d5db;
+}
+
+@media(max-width:900px){
+
+    .product-detail{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .product-info h1{
+        font-size:30px;
+    }
+
+    .action-buttons{
+        justify-content:center;
+    }
+}
+
+.product-info h1{
+    font-size:48px;
+    font-weight:700;
+    margin-bottom:10px;
+}
+
+.category{
+    font-size:18px;
+    color:#2563eb;
+    margin-bottom:15px;
+}
+
+.description{
+    font-size:20px;
+    color:#444;
+    margin-bottom:10px;
+}
+
+.brand{
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:30px;
+}
+
+.specs-box{
+    margin-top:20px;
+}
+
+.specs-box h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.btn{
+    min-width:200px;
+    text-align:center;
+}

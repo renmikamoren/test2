@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hubungi Kami | PT. Khalf Global Teknik</title>
+    <link rel="stylesheet" href="assets/css/contact.css">
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preconnect" href="https://translate.googleapis.com">
+</head>
+<body>
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none; color: inherit;">
+                    <span class="red">KHALF</span> <span class="blue">GLOBAL TEKNIK</span>
+                </a>
+            </div>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+
+            <ul class="nav-list">
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="index.html#tentang">Tentang</a></li>
+                <li><a href="catalog.html">Katalog</a></li>
+                <li><a href="contact.html" class="active">Kontak</a></li>
+                <li class="lang-switcher">
+                    <a href="javascript:void(0)" onclick="changeLanguage('id')">ID</a> | 
+                    <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a>
+                </li>
+            </ul>
+
+            <div id="google_translate_element" style="display:none;"></div>
+        </div>
+    </nav>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'id',
+                includedLanguages: 'en,id',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function changeLanguage(lang) {
+            var selectField = document.querySelector(".goog-te-combo");
+            if (selectField) {
+                selectField.value = lang;
+                selectField.dispatchEvent(new Event('change'));
+            }
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <header class="contact-header">
+        <div class="container" data-aos="fade-down">
+            <h2>Hubungi Kami</h2>
+            <p>Solusi pengadaan alat teknik dan industri terpercaya sejak 2016.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Detail Kontak</h3>
+                    <div class="info-item">
+                        <strong>📍 Alamat Kantor</strong>
+                        <p>Jl. Raya Mukhtar Tabrani, Bintang Metropol Blok A4/97, Bekasi Utara</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>📞 Telepon Kantor</strong>
+                        <p>021-89250513</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>💬 WhatsApp</strong>
+                        <p>+62 812-xxxx-xxxx (Fast Response)</p>
+                    </div>
+                    <div class="info-item">
+                        <strong>📧 Email</strong>
+                        <p>info@khalfglobalteknik.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-map" data-aos="fade-left">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.824763!3d-6.194778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTEnNDEuMiJTIDEwNsKwNDknMjkuMiJF!5e0!3m2!1sid!2sid!4v1625000000000" 
+                        width="100%" height="350" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="kontak">
+        <div class="container">
+            <p><strong>PT. Khalf Global Teknik</strong></p>
+            <p>Jl. Raya Mukhtar Tabrani, Bintang Metropol Blok A4/97, Bekasi Utara</p>
+            <p>Hubungi Kami: 021-89250513</p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 PT. Khalf Global Teknik</p>
+        </div>
+    </footer>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ duration: 800, once: true });</script>
+    <script src="assets/js/product.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

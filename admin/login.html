@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Admin | PT. Khalf Global Teknik</title>
+
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/login.css">
+
+    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
+</head>
+<body>
+
+<nav>
+    <div class="container nav-container">
+        <div class="logo">
+            <span class="red">KHALF</span> GLOBAL TEKNIK
+        </div>
+
+        <ul class="nav-list">
+           
+        </ul>
+    </div>
+</nav>
+
+<section class="login-section">
+    <div class="container">
+
+        <div class="login-card">
+
+            <h2>Login Admin</h2>
+
+            <p class="subtitle">
+                Masuk untuk mengelola produk dan stok KGT
+            </p>
+
+            <form id="loginForm">
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="admin@kgt.com"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label>Password</label>
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Masukkan password"
+                        required
+                    >
+                </div>
+
+                <button type="submit" class="btn-login">
+                    Login
+                </button>
+
+                <p id="message"></p>
+
+            </form>
+
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/login.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="../assets/js/login.js"></script>
+
+</body>
+</html>

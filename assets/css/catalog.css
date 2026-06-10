@@ -1,0 +1,473 @@
+/* --- RESET & BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif; 
+}
+
+body { 
+    background-color: #f8fafc; 
+    color: #333; 
+    line-height: 1.6; 
+    /* FIX GOOGLE TRANSLATE BAR */
+    top: 0px !important; 
+    position: static !important;
+}
+
+html {
+    margin-top: 0px !important;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+.section { padding: 40px 0; }
+
+/* --- NAVBAR (SAMA DENGAN INDEX) --- */
+nav { 
+    background: #1e293b; 
+    color: white; 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: bold; font-size: 1.1rem; }
+.logo .red { color: #e11d48; }
+
+.nav-list { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-list a { color: white; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.nav-list a:hover, .nav-list a.active { color: #e11d48; font-weight: bold; }
+
+/* Hamburger Menu Icon */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+.bar { width: 25px; height: 3px; background-color: white; transition: 0.4s; }
+
+/* --- CATALOG HEADER & SEARCH --- */
+/* --- HERO BANNER --- */
+.hero {
+    background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200') center/cover;
+    height: 400px;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-container {
+    max-width: 550px;
+    margin: 25px auto 0;
+}
+#search-input { 
+    width: 100%; 
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    border: none; 
+    outline: none; 
+    font-size: 1rem; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* --- GRID & CARD PRODUK --- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid #e2e8f0; 
+    transition: 0.3s; 
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 20px; }
+
+.category { color: #e11d48; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+.btn-wa { 
+    display: block; 
+    width: 100%; 
+    background: #1e293b; 
+    color: white; 
+    text-align: center; 
+    padding: 12px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    margin-top: 15px; 
+    font-weight: bold; 
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+.btn-wa:hover { background: #2563eb; }
+
+/* Search No Result */
+#no-product { text-align: center; padding: 50px; font-weight: bold; color: #64748b; }
+.hidden { display: none; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .menu-toggle { display: flex; }
+
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1e293b;
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.25s ease-in-out;
+        opacity: 0;
+        z-index: 9999;
+    }
+
+    .nav-list.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 20px 0;
+        border-top: 4px solid #e11d48;
+    }
+
+    .nav-list li {
+        padding: 12px 25px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .catalog-header h2 { font-size: 1.6rem; }
+}
+
+/* --- THE ULTIMATE GOOGLE TRANSLATE CLEANUP (BY NAVY) --- */
+
+/* 1. Paksa Bar Putih Google Hilang Total */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+iframe.goog-te-menu-frame,
+.skiptranslate iframe,
+[class*="VIpgJd-ZVi9od-ORHb-O36Of-ak9v"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 2. MATIKAN SEMUA HIGHLIGHT (KOTAK PUTIH) PAS DIKLIK */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative !important;
+    display: inline !important;
+}
+
+[class*="goog-text-highlight"], 
+[class*="VIpgJd-y6oGMc-ti6h9c"],
+.goog-text-highlight,
+.skiptranslate font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    outline: none !important;
+}
+
+/* Sembunyikan Tooltip Popup */
+.goog-tooltip, .goog-tooltip:hover {
+    display: none !important;
+}
+
+/* Sembunyikan Widget Asli */
+#google_translate_element {
+    display: none !important;
+}
+
+footer { 
+    background: #1e293b; 
+    color: #94a3b8; 
+    padding: 40px 0; 
+    text-align: center; 
+    font-size: 0.85rem; 
+}/* --- RESET & BASE --- */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Arial', sans-serif; 
+}
+
+body { 
+    background-color: #f8fafc; 
+    color: #333; 
+    line-height: 1.6; 
+    /* FIX GOOGLE TRANSLATE BAR */
+    top: 0px !important; 
+    position: static !important;
+}
+
+html {
+    margin-top: 0px !important;
+}
+
+.container { max-width: 1100px; margin: 0 auto; padding: 0 25px; }
+.section { padding: 40px 0; }
+
+/* --- NAVBAR (SAMA DENGAN INDEX) --- */
+nav { 
+    background: #1e293b; 
+    color: white; 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: bold; font-size: 1.1rem; }
+.logo .red { color: #e11d48; }
+
+.nav-list { display: flex; list-style: none; gap: 25px; align-items: center; }
+.nav-list a { color: white; text-decoration: none; font-size: 0.9rem; transition: 0.3s; }
+.nav-list a:hover, .nav-list a.active { color: #e11d48; font-weight: bold; }
+
+/* Hamburger Menu Icon */
+.menu-toggle { display: none; flex-direction: column; cursor: pointer; gap: 5px; z-index: 1001; }
+.bar { width: 25px; height: 3px; background-color: white; transition: 0.4s; }
+
+/* --- CATALOG HEADER & SEARCH --- */
+/* --- HERO BANNER --- */
+.hero {
+    background: url('https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=1200') center/cover;
+    height: 400px;
+    color: white;
+}
+
+.hero-overlay {
+    background: rgba(0,0,0,0.7);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 2.4rem;
+    margin-bottom: 12px;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 25px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search-container {
+    max-width: 550px;
+    margin: 25px auto 0;
+}
+#search-input { 
+    width: 100%; 
+    padding: 15px 25px; 
+    border-radius: 50px; 
+    border: none; 
+    outline: none; 
+    font-size: 1rem; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* --- GRID & CARD PRODUK --- */
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 25px; }
+.card { 
+    background: white; 
+    border-radius: 12px; 
+    overflow: hidden; 
+    border: 1px solid #e2e8f0; 
+    transition: 0.3s; 
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+.card img { width: 100%; height: 200px; object-fit: cover; }
+.card-content { padding: 20px; }
+
+.category { color: #e11d48; font-size: 0.7rem; font-weight: bold; text-transform: uppercase; }
+.btn-wa { 
+    display: block; 
+    width: 100%; 
+    background: #1e293b; 
+    color: white; 
+    text-align: center; 
+    padding: 12px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    margin-top: 15px; 
+    font-weight: bold; 
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+.btn-wa:hover { background: #2563eb; }
+
+/* Search No Result */
+#no-product { text-align: center; padding: 50px; font-weight: bold; color: #64748b; }
+.hidden { display: none; }
+
+/* --- RESPONSIVE MOBILE --- */
+@media screen and (max-width: 768px) {
+    .container { padding: 0 20px; }
+    .menu-toggle { display: flex; }
+
+    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+    .nav-list {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #1e293b;
+        text-align: left;
+        max-height: 0;
+        overflow: hidden;
+        transition: all 0.25s ease-in-out;
+        opacity: 0;
+        z-index: 9999;
+    }
+
+    .nav-list.active {
+        max-height: 500px;
+        opacity: 1;
+        padding: 20px 0;
+        border-top: 4px solid #e11d48;
+    }
+
+    .nav-list li {
+        padding: 12px 25px;
+        width: 100%;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .catalog-header h2 { font-size: 1.6rem; }
+}
+
+/* --- THE ULTIMATE GOOGLE TRANSLATE CLEANUP (BY NAVY) --- */
+
+/* 1. Paksa Bar Putih Google Hilang Total */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame,
+iframe.goog-te-menu-frame,
+.skiptranslate iframe,
+[class*="VIpgJd-ZVi9od-ORHb-O36Of-ak9v"] {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* 2. MATIKAN SEMUA HIGHLIGHT (KOTAK PUTIH) PAS DIKLIK */
+font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative !important;
+    display: inline !important;
+}
+
+[class*="goog-text-highlight"], 
+[class*="VIpgJd-y6oGMc-ti6h9c"],
+.goog-text-highlight,
+.skiptranslate font {
+    background-color: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    outline: none !important;
+}
+
+/* Sembunyikan Tooltip Popup */
+.goog-tooltip, .goog-tooltip:hover {
+    display: none !important;
+}
+
+/* Sembunyikan Widget Asli */
+#google_translate_element {
+    display: none !important;
+}
+
+footer { 
+    background: #1e293b; 
+    color: #94a3b8; 
+    padding: 40px 0; 
+    text-align: center; 
+    font-size: 0.85rem; 
+}
+
+.detail-btn{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#e11d48;
+    color:#fff;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+    transition:all .3s ease;
+}
+
+.detail-btn:hover{
+    background: #be123c; 
+   
+}
+
+.detail-btn:active{
+    transform:translateY(0);
+}
+
+.category-filter{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:20px;
+}
+
+.category-btn{
+    padding:10px 20px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    background:#f1f5f9;
+    transition:.3s;
+}
+
+.category-btn:hover{
+    background:#2563eb;
+    color:#fff;
+}
+
+.category-btn.active{
+    background:#2563eb;
+    color:#fff;
+}
