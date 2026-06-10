@@ -313,7 +313,7 @@ nav {
 .btn-wa { 
     display: block; 
     width: 100%; 
-    background: #1e293b; 
+    background: #e11d48; 
     color: white; 
     text-align: center; 
     padding: 12px; 
@@ -324,7 +324,7 @@ nav {
     font-size: 0.85rem;
     transition: 0.3s;
 }
-.btn-wa:hover { background: #2563eb; }
+.btn-wa:hover { background: #be123c; }
 
 /* Search No Result */
 #no-product { text-align: center; padding: 50px; font-weight: bold; color: #64748b; }
