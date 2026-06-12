@@ -59,8 +59,8 @@ async function loadProduct() {
         <div class="specs-box">
             <h3>Detail</h3>
 
-            <div class="description">
-            ${data.description || "-"}
+           <div class="description">
+                ${(data.description || "-").replace(/\n/g, "<br>")}
             </div>
             ${
     data.specs
