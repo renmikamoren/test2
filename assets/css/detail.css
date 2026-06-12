@@ -204,6 +204,13 @@ font {
     padding: 0 !important;
 }
 
+.description{
+    white-space: pre-line;
+    font-size: 20px;
+    color:#444;
+    line-height:1.8;
+}
+
 /* Sembunyikan Tooltip Popup */
 .goog-tooltip, .goog-tooltip:hover {
     display: none !important;
