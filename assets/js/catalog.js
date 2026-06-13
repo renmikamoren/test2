@@ -24,7 +24,7 @@ async function loadProducts() {
     await supabaseClient
         .from("products")
         .select("*")
-        .order("id");
+        .order("id", { ascending: true });
 
     if (error) {
 
