@@ -70,7 +70,7 @@ async function loadProducts(limit = null) {
             *,
             categories(name)
         `)
-        .order("id", { ascending: false });
+        .order("id", { ascending: true });
 
     if (error) {
         console.error(error);
