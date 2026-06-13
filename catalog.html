@@ -3,103 +3,143 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog Produk | PT. Khalf Global Teknik</title>
-    <link rel="stylesheet" href="assets/css/catalog.css">
-    <link rel="icon" type="image/png" href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <title>Dashboard KGT</title>
+
+    <link rel="stylesheet" href="../assets/css/admin.css">
+
+    <link rel="icon"
+    type="image/png"
+    href="https://www.image2url.com/r2/default/images/1778163706889-ca01a978-96b5-424a-9f95-a7625ea63152.png">
+
 </head>
 <body>
-    <!-- Navbar Katalog (Sama persis dengan Index) -->
-<!-- Navbar Katalog -->
-<nav>
-    <div class="container nav-container">
-        <div class="logo">
-            <a href="index.html" style="text-decoration: none; color: inherit;">
-                <span class="red">KHALF</span> <span class="blue">GLOBAL TEKNIK</span>
-            </a>
-        </div>
-        
-        <!-- Hamburger Menu (Penting: ID harus mobile-menu) -->
-        <div class="menu-toggle" id="mobile-menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </div>
 
-        <ul class="nav-list">
-            <li><a href="index.html">Beranda</a></li>
-            <li><a href="index.html#tentang">Tentang</a></li>
-            <li><a href="catalog.html" class="active">Katalog</a></li>
-            <li><a href="contact.html">Kontak</a></li>
-            <li class="lang-switcher">
-                <a href="javascript:void(0)" onclick="changeLanguage('id')">ID</a> | 
-                <a href="javascript:void(0)" onclick="changeLanguage('en')">EN</a>
-            </li>
-        </ul>
-        <div id="google_translate_element" style="display:none;"></div>
+<div class="admin-wrapper">
 
-<script type="text/javascript">
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'id',
-            includedLanguages: 'en,id',
-            autoDisplay: false
-        }, 'google_translate_element');
-    }
+    <div class="admin-container">
 
-    function changeLanguage(lang) {
-        var selectField = document.querySelector(".goog-te-combo");
-        if (selectField) {
-            selectField.value = lang;
-            selectField.dispatchEvent(new Event('change'));
-        }
-    }
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-    </div>
-</nav>
+        <h2>Dashboard KGT</h2>
 
-   <header class="hero">
-    <div class="hero-overlay">
-        <div class="container" data-aos="fade-down">
-            <h2>Katalog Produk Kami</h2>
-            <p>
-                Temukan berbagai produk teknik dan industri berkualitas tinggi 
-                untuk kebutuhan manufaktur dan pemerintahan.
-            </p>
+        <div class="stats-container">
 
-            <div class="search-container" data-aos="fade-up">
-                <input type="text" id="search-input" placeholder="Cari nama produk atau kategori...">
+            <div class="stat-card">
+                <h3>Total Produk</h3>
+                <p id="productCount">0</p>
             </div>
 
-            <div id="category-filter" class="category-filter"></div>
+            <div class="stat-card">
+                <h3>Total Kategori</h3>
+                <p id="categoryCount">0</p>
+            </div>
+
         </div>
+
+        <div class="search-container">
+            <input 
+                type="text" 
+                id="searchProduct" 
+                placeholder="Cari nama produk atau kategori...">
+        </div>
+
+        <div class="action-bar">
+
+            <button
+                class="btn-add"
+                id="addProductBtn">
+                + Add New Product
+            </button>
+
+        </div>
+
+        <div id="productsContainer">
+
+            <div class="empty-state">
+
+                <h3>Belum Ada Produk</h3>
+
+                <p>
+                    Produk yang ditambahkan akan muncul di sini.
+                </p>
+
+            </div>
+
+        </div>
+
+        <button
+            class="btn-logout"
+            onclick="logout()">
+            Logout
+        </button>
+
     </div>
-</header>
 
-    <section class="section">
-        <div class="container">
-            <div id="product-grid" class="grid">
-                </div>
-            <div id="no-product" class="hidden">Produk yang Anda cari tidak ditemukan.</div>
+</div>
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <h3 id="modalTitle">
+            Tambah Produk
+        </h3>
+
+        <input
+            type="text"
+            id="newName"
+            placeholder="Nama Produk">
+
+        <select id="newCategory">
+
+            <option value="">
+                Pilih Kategori
+            </option>
+
+        </select>
+
+        <input
+            type="text"
+            id="newBrand"
+            placeholder="Brand">
+
+        <textarea
+            id="newDescription"
+            placeholder="Deskripsi"></textarea>
+
+        <input
+            type="number"
+            id="newStock"
+            placeholder="Stock">
+
+        <input
+            type="file"
+            id="newImage"
+            accept="image/*">
+
+        <div class="modal-actions">
+
+            <button
+                class="edit-btn"
+                onclick="saveProduct()">
+                Simpan
+            </button>
+
+            <button
+                class="delete-btn"
+                onclick="closeModal()">
+                Batal
+            </button>
+
         </div>
-    </section>
 
-    <footer id="kontak">
-        <div class="container">
-            <p><strong>PT. Khalf Global Teknik</strong></p>
-            <p>Jl. Raya Mukhtar Tabrani, Bintang Metropol Blok A4/97, Bekasi Utara</p>
-            <p>Hubungi Kami: 021-89250513</p>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">&copy; 2026 PT. Khalf Global Teknik</p>
-        </div>
-    </footer>
+    </div>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ duration: 800, once: true });</script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="assets/js/supabase.js"></script>
-    <script src="assets/js/catalog.js"></script>
-    <script src="assets/js/script.js"></script>
-    
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../assets/js/supabase.js"></script>
+<script src="../assets/js/dashboard.js"></script>
+
 </body>
 </html>
